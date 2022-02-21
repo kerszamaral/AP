@@ -11,7 +11,7 @@ out: 10 valores
 
 int main(void){
 
-    int i=0, j=0;   //Contadores
+    int i=0, j=0, q=0;   //Contadores
     int Par=0, Impar=0, Valor=0, CounterPar=0, CounterImpar=0;  //Variaveis usadas
     int APar[ELEMENTOS]={}, AImpar[ELEMENTOS]={}, ArrayFinal[2*ELEMENTOS];  //Arrays
 
@@ -74,6 +74,8 @@ int main(void){
     for(i=0; i<2*ELEMENTOS; i++){
         printf("%d ", ArrayFinal[i]);
     }
-
+    //Para poder ler quando aberto na cmd
+    printf("\nDigite 'q' para sair: ");
+    scanf("\n%d", &q);
     return 0;
 }
