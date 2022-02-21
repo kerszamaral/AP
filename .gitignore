@@ -8,3 +8,4 @@ Algoritmos e Programação/.vscode/launch.json
 Algoritmos e Programação/.vscode/settings.json
 Algoritmos e Programação/.vscode/tasks.json
 *.exe
+.gitignore
