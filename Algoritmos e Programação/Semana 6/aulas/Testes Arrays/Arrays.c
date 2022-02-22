@@ -72,10 +72,9 @@ int main(void){
     for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
         for (i = 0; i<2*ELEMENTOS-1; i++){
             if(ArrayFinalCre[i]>ArrayFinalCre[i+1]){
-                int x = ArrayFinalCre[i];
-                int y = ArrayFinalCre[i+1];
-                ArrayFinalCre[i] = y;
-                ArrayFinalCre[i+1]=x;
+                int x = ArrayFinalCre[i+1];
+                ArrayFinalCre[i+1] = ArrayFinalCre[i];
+                ArrayFinalCre[i]=x;
             }
         } 
     }
@@ -83,10 +82,9 @@ int main(void){
     for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
         for (i = 0; i<2*ELEMENTOS-1; i++){
             if(ArrayFinalDe[i]<ArrayFinalDe[i+1]){ //Alterando o sinal mudamos de crescente pra descrente
-                int x = ArrayFinalDe[i];
-                int y = ArrayFinalDe[i+1];
-                ArrayFinalDe[i] = y;
-                ArrayFinalDe[i+1]=x;
+                int x = ArrayFinalDe[i+1];
+                ArrayFinalDe[i+1] = ArrayFinalDe[i];
+                ArrayFinalDe[i]=x;
             }
         } 
     }
