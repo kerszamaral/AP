@@ -1,9 +1,9 @@
 /* Ian Kersz - Cartão ufrgs: 00338368
 21.02.22
 Entra com 10 valores quaisquer, sendo 5 deles par e 5 deles impar, forma um Array com todos
-Triplica esse Array e então faz um sort crescente e decrescente.
+Então faz um sort crescente e decrescente.
 A output é então o Array original, com a ordem de entrada alternadas entre par e impar, 
-o Array Crescente e o Array Decrescente.
+o Array em ordem Crescente e o Array em ordem Decrescente.
 in: 10 valores
 out: 3 valores (3 arrays de 10 valores, totalizando 30 valores)
 */
@@ -15,9 +15,7 @@ int main(void){
 
     int i=0, j=0;   //Contadores
     int Par=0, Impar=0, Valor=0, CounterPar=0, CounterImpar=0;  //Variaveis usadas
-    //Arrays
-    int APar[ELEMENTOS]={}, AImpar[ELEMENTOS]={};
-    int ArrayFinal[2*ELEMENTOS]={}, ArrayFinalCre[2*ELEMENTOS]={}, ArrayFinalDe[2*ELEMENTOS]={};
+    int APar[ELEMENTOS]={}, AImpar[ELEMENTOS]={}, ArrayFinal[2*ELEMENTOS]={}; // Arrays
 
     //Info do Programa
     printf("\nInforme %d numeros pares e %d numeros impares em qualquer ordem!\n", ELEMENTOS, ELEMENTOS);
@@ -61,54 +59,50 @@ int main(void){
         ArrayFinal[i]=APar[i/2];
         ArrayFinal[i+1]=AImpar[i/2];
     }
-
-    //Triplicação de ArrayFinal para termos 3 outputs em ordens diferentes
-    for (i = 0; i <2*ELEMENTOS; i++){
-        ArrayFinalCre[i]=ArrayFinal[i];
-        ArrayFinalDe[i]=ArrayFinal[i];
-    }
-
-    //Sort para crescente (Acho que acabou ficando quase igual ao bubble sort, mas fiz sem olhar)
-    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
-        for (i = 0; i<2*ELEMENTOS-1; i++){
-            if(ArrayFinalCre[i]>ArrayFinalCre[i+1]){
-                int x = ArrayFinalCre[i+1];
-                ArrayFinalCre[i+1] = ArrayFinalCre[i];
-                ArrayFinalCre[i]=x;
-            }
-        } 
-    }
-    //Sort para decrescente
-    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
-        for (i = 0; i<2*ELEMENTOS-1; i++){
-            if(ArrayFinalDe[i]<ArrayFinalDe[i+1]){ //Alterando o sinal mudamos de crescente pra descrente
-                int x = ArrayFinalDe[i+1];
-                ArrayFinalDe[i+1] = ArrayFinalDe[i];
-                ArrayFinalDe[i]=x;
-            }
-        } 
-    }
-
     //Output
     //Print do ArrayFinal na ordem de entrada alternada entre par e impar (problema original da aula)
     printf("\n\nResultado em ordem inicial: ");
     for(i=0; i<2*ELEMENTOS; i++){
         printf("%d ", ArrayFinal[i]);
     }
+
+    //Sort para crescente (Acho que acabou ficando quase igual ao bubble sort, mas fiz sem olhar)
+    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
+        for (i = 0; i<2*ELEMENTOS-1; i++){
+            if(ArrayFinal[i]>ArrayFinal[i+1]){
+                int x = ArrayFinal[i+1];
+                ArrayFinal[i+1] = ArrayFinal[i];
+                ArrayFinal[i]=x;
+            }
+        } 
+    }
+    //Output
     //Print do ArrayFinal em ordem crescente (demonstração do sort)
     printf("\nResultado em ordem crescente: ");
     for(i=0; i<2*ELEMENTOS; i++){
-        printf("%d ", ArrayFinalCre[i]);
+        printf("%d ", ArrayFinal[i]);
     }
+
+    //Sort para decrescente
+    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
+        for (i = 0; i<2*ELEMENTOS-1; i++){
+            if(ArrayFinal[i]<ArrayFinal[i+1]){ //Alterando o sinal mudamos de crescente pra descrente
+                int x = ArrayFinal[i+1];
+                ArrayFinal[i+1] = ArrayFinal[i];
+                ArrayFinal[i]=x;
+            }
+        } 
+    }
+    //Output
     //Print do ArrayFinal em ordem decrescente (demonstração do sort)
     printf("\nResultado em ordem decrescente: ");
     for(i=0; i<2*ELEMENTOS; i++){
-        printf("%d ", ArrayFinalDe[i]);
+        printf("%d ", ArrayFinal[i]);
     }
 
     //Para poder ler os resultados quando aberto na cmd do windows
     printf("\n\nDigite qualquer coisa para sair: ");
     scanf("%d", &j);
-
+    
     return 0;
 }
