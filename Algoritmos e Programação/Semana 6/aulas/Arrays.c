@@ -93,7 +93,7 @@ int main(void){
 
     //Output
     //Print do ArrayFinal na ordem de entrada alternada entre par e impar (problema original da aula)
-    printf("\nResultado em ordem inicial: ");
+    printf("\n\nResultado em ordem inicial: ");
     for(i=0; i<2*ELEMENTOS; i++){
         printf("%d ", ArrayFinal[i]);
     }
