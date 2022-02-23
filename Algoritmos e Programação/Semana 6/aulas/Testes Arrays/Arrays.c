@@ -22,7 +22,7 @@ int main(void){
 
     //Input do usuário      Loop para informar o valor de N*ELEMENTOS de termos
     for (i = 0; i < 2*ELEMENTOS; i++) {
-        printf("Informe o %dº numero: ", i+1);
+        printf("Informe o %dº numero (%d pares e %d impares já foram informados): ", i+1, CounterPar, CounterImpar);
         scanf("%d", &Valor);
 
         //Check se valor é par ou impar e introdução dele ao array correto
