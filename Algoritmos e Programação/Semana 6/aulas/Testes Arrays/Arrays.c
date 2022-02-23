@@ -66,7 +66,7 @@ int main(void){
         printf("%d ", ArrayFinal[i]);
     }
 
-    //Sort para crescente (Acho que acabou ficando quase igual ao bubble sort, mas fiz sem olhar)
+    //Sort para crescente (fiz sem olhar)
     for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
         for (i = 0; i<2*ELEMENTOS-1; i++){
             if(ArrayFinal[i]>ArrayFinal[i+1]){
