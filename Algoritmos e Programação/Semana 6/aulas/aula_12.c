@@ -14,14 +14,7 @@ out: 1 valor
 
 int main(void){
 
-    char palavra[TAM]={};
-
-    palavra[0]='U';
-    palavra[1]='F';
-    palavra[2]='R';
-    palavra[3]='G';
-    palavra[4]='S';
-    palavra[5]='\0';
+    char palavra[TAM]={"UFRGS\0"};
 
     printf("\nString = %s\n", palavra);
 
