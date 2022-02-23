@@ -16,7 +16,8 @@ int main(void){
     char dia_da_semana[13+1]={};
 
     printf("Entre com o dia da semana: ");
-    scanf("%s", dia_da_semana);
+    fgets(dia_da_semana, 14, stdin);
+    dia_da_semana[strlen(dia_da_semana)-1]='\0';
 
     printf("\nString = %s\n", dia_da_semana);
 
