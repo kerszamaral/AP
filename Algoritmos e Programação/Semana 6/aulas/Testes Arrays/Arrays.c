@@ -38,8 +38,8 @@ int main(void){
         Par = 0, Impar = 0; //Algum bug faz com que esses dois fiquem fora dos ifs para não dar erro
 
         //Codigo para erro caso o usuário faça overflow do array
-        if(CounterPar>=ELEMENTOS+1||CounterImpar>=ELEMENTOS+1){
-            printf("\nOverflow de um dos arrays!!");
+        if(CounterPar>ELEMENTOS||CounterImpar>ELEMENTOS){
+            printf("\nOverflow dos arrays!!");
             return 0;
         }
         //Loops para verificar em qual posição do array o proximo valor deve ser informado
