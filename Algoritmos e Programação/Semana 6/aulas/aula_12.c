@@ -10,13 +10,15 @@ out: 1 valor
 #include<ctype.h>
 #include<string.h>
 
-#define TAM 30
 
 int main(void){
 
-    char palavra[TAM]={"UFRGS\0"};
+    char dia_da_semana[13+1]={};
 
-    printf("\nString = %s\n", palavra);
+    printf("Entre com o dia da semana: ");
+    scanf("%s", dia_da_semana);
+
+    printf("\nString = %s\n", dia_da_semana);
 
     return 0;
 }
