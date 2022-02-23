@@ -1,5 +1,5 @@
 /* Ian Kersz - Cartão ufrgs: 00338368
-20.02.22
+23.02.22
 
 in: 2 valores
 out: 1 valor 
@@ -10,8 +10,20 @@ out: 1 valor
 #include<ctype.h>
 #include<string.h>
 
+#define TAM 30
+
 int main(void){
 
+    char palavra[TAM]={};
+
+    palavra[0]='U';
+    palavra[1]='F';
+    palavra[2]='R';
+    palavra[3]='G';
+    palavra[4]='S';
+    palavra[5]='\0';
+
+    printf("\nString = %s\n", palavra);
 
     return 0;
 }
