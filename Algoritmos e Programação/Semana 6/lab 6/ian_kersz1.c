@@ -12,20 +12,20 @@ out: 2 strings
 int main(void){
     //variaveis
     int i=0, j=0, k=0;
-    char palavra[25+1]={0}, reversa[25+1]={0}, maiuscula[25+1]={0};
+    char palavra[25+1]={0}, reversa[25+1], maiuscula[25+1]={0};
 
     //Inicialização
     printf("Entre com uma string: ");
 
     //função para pegar a string com espaços
-    if(fgets(palavra, 15, stdin)!=NULL){
+    if(fgets(palavra, 26, stdin)!=NULL){
         palavra[strlen(palavra)-1]='\0';
     }else{
         printf("Problema com o fgets()\n");
     }
 
     //loop para todas maiuscula
-    for (i = 0; i < 26; i++){
+    for (i = 0; i < strlen(palavra); i++){
         maiuscula[i]=toupper(palavra[i]);
     }
 
