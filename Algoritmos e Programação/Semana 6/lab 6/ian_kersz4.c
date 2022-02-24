@@ -1,9 +1,8 @@
 /* Ian Kersz - Cartão ufrgs: 00338368
 24.02.22
-Pega até 10 valores, faz seus quadrados, faz suas raizes, mostra a Media dos quadrados e das raizes,
-informa quantos valores estão contidos entre as medias
-in: até 10 valores
-out: 3 valor (Media quadrados, Media raizes, Quant num entre as medias) 
+Pega até 10 valores, faz a media dos valores e informa quantos são maiores que a media e quantos são menores que a media
+in: até 15 valores
+out: 3 valor (Media, Maiores que a Media, Menores que a media) 
 */
 
 #include<stdio.h>

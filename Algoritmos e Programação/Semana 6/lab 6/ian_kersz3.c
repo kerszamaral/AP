@@ -1,8 +1,8 @@
 /* Ian Kersz - Cartão ufrgs: 00338368
 24.02.22
-Ler uma string de até 25 caracteres, criar duas outras strings, uma toda SemEspaco e outra invertida.
+Ler uma string de até 60 caracteres, criar uma outra string Sem Espaco e informa quantas vogais.
 in: 1 string
-out: 2 strings 
+out: 1 string e 1 valor 
 */
 
 #include<stdio.h>
@@ -26,7 +26,7 @@ int main(void){
         printf("Problema com o fgets()\n");
     }
     
-    //loop para todas SemEspaco
+    //loop para ver quantidade de vogais e fazer string Sem Espaco
     for (i = 0; i < TAM+1; i++){
         Minuscula[i]=tolower(palavra[i]);
         if (Minuscula[i]=='a'||Minuscula[i]=='e'||Minuscula[i]=='i'||Minuscula[i]=='o'||Minuscula[i]=='u'){
@@ -37,7 +37,8 @@ int main(void){
             j++;
         }
     }
-
+    
+    //Output
     printf("\nString toda SemEspaco: %s", SemEspaco);
     printf("\nString invertida: %d", Vogais);
 
