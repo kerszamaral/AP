@@ -12,7 +12,7 @@ out: 2 strings
 int main(void){
     //variaveis
     int i=0, j=0, k=0;
-    char palavra[25+1]={0}, reversa[25+1], maiuscula[25+1]={0};
+    char palavra[25+1]={0}, reversa[25+1]={0}, maiuscula[25+1]={0};
 
     //Inicialização
     printf("Entre com uma string: ");
