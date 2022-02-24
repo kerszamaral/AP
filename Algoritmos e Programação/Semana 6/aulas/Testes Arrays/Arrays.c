@@ -67,7 +67,7 @@ int main(void){
     }
 
     //Sort para crescente (fiz sem olhar)
-    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
+    for(j=0;j<2*ELEMENTOS; j++){
         for (i = 0; i<2*ELEMENTOS-1; i++){
             if(ArrayFinal[i]>ArrayFinal[i+1]){
                 int x = ArrayFinal[i+1];
@@ -84,7 +84,7 @@ int main(void){
     }
 
     //Sort para decrescente
-    for(j=0;j<ELEMENTOS*ELEMENTOS; j++){
+    for(j=0;j<2*ELEMENTOS; j++){
         for (i = 0; i<2*ELEMENTOS-1; i++){
             if(ArrayFinal[i]<ArrayFinal[i+1]){ //Alterando o sinal mudamos de crescente pra descrente
                 int x = ArrayFinal[i+1];
