@@ -13,7 +13,7 @@ out: 1 string e 1 valor
 
 int main(void){
     //variaveis
-    int i=0, j=0, k=0, Vogais=0;
+    int i=0, j=0, Vogais=0;
     char palavra[TAM+1]={0}, SemEspaco[TAM+1]={0}, Minuscula[TAM+1]={0};
 
     //Inicialização
@@ -37,7 +37,7 @@ int main(void){
             j++;
         }
     }
-    
+
     //Output
     printf("\nString toda SemEspaco: %s", SemEspaco);
     printf("\nString invertida: %d", Vogais);
