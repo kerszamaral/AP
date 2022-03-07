@@ -17,11 +17,24 @@ out: 1 valor
 
 int main(void){
 
-    //Qualquer string é convertido em int
-    //int x=0;
-    //char pal[30]="1999";
-    //x=atoi(pal);
-    //printf("%d", x);
+    //Qualquer string é convertido em int com atoi
+    //int d=0;
+    //char str[30]="1999";
+    //d=atoi(str);
+    //printf("%d", d);
+
+    //Qualquer int para string
+    /*char str[30]={0};
+    int i=0;
+    //converte o inteiro 199 para string
+    sprintf(str, "%d", 1999);
+
+    //imprimindo caracteres do array
+    for (i = 0; i < strlen(str); i++){
+        printf("%c ", str[i]);
+    }*/
+    
+
 
     //Algoritmo do Selection sort
     /*int pos=0, min=0, i=0, x=0, vet[MAX]={0};
