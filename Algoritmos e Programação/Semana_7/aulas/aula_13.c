@@ -53,6 +53,9 @@ int main(void){
         }
     }*/
 
+    //Como achar somente valor em uma range com rand()
+    //x = MIN + rand() % (MAX - MIN + 1)
+
     int r=0, i;
 
     srand(time(NULL));
