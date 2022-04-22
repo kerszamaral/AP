@@ -7,3 +7,5 @@ Algoritmos e Programação.code-workspace
 Algoritmos e Programação/.vscode/c_cpp_properties.json
 Algoritmos e Programação/.vscode/launch.json
 Algoritmos e Programação/.vscode/tasks.json
+*.bin
+*.txt
