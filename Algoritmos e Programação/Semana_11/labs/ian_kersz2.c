@@ -39,7 +39,7 @@ void registrarAluno(char arquivo[])
         } while (strcmp(aluno.nome, "sair"));
     }
     else
-        printf("Erro ao abrir o arquivo!");
+        printf("\nErro ao abrir o arquivo!\n");
     fclose(fAlunos);
 }
 
@@ -65,7 +65,7 @@ void lerAlunos(char arquivo[], int media)
         printf("\nMedia das idades: %.2f\n", idadeMedia / count);
     }
     else
-        printf("Erro ao abrir o arquivo!");
+        printf("\nErro ao abrir o arquivo!\n");
     fclose(fAlunos);
 }
 
