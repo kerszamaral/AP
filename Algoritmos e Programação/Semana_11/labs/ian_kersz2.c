@@ -10,9 +10,9 @@ out: k + 1 valor (k é o número de alunos com nota maior que o pesquisado)
 
 typedef struct ALUNOS
 {
-    char nome[60];
-    int idade;
-    int nota;
+    char Nome[60];
+    int Idade;
+    int Nota;
 } ALUNOS;
 
 void registrarAluno(char arquivo[])
@@ -27,16 +27,16 @@ void registrarAluno(char arquivo[])
         do
         {
             printf("\nNome: ");
-            scanf("%s", aluno.nome);
-            if (strcmp(aluno.nome, "sair"))
+            scanf("%s", aluno.Nome);
+            if (strcmp(aluno.Nome, "sair"))
             {
                 printf("Idade: ");
-                scanf("%d", &aluno.idade);
+                scanf("%d", &aluno.Idade);
                 printf("Nota: ");
-                scanf("%d", &aluno.nota);
+                scanf("%d", &aluno.Nota);
                 fwrite(&aluno, sizeof(ALUNOS), 1, fAlunos);
             }
-        } while (strcmp(aluno.nome, "sair"));
+        } while (strcmp(aluno.Nome, "sair"));
     }
     else
         printf("\nErro ao abrir o arquivo!\n");
@@ -54,11 +54,11 @@ void lerAlunos(char arquivo[], int media)
         printf("Lista todos alunos com media maior ou igual a %d:", media);
         while (fread(&aluno, sizeof(ALUNOS), 1, fAlunos))
         {
-            if (aluno.nota >= media)
+            if (aluno.Nota >= media)
             {
-                printf("\nNome: %s", aluno.nome);
-                printf(" Nota: %d", aluno.nota);
-                idadeMedia += aluno.idade;
+                printf("\nNome: %s", aluno.Nome);
+                printf(" Nota: %d", aluno.Nota);
+                idadeMedia += aluno.Idade;
                 count++;
             }
         }

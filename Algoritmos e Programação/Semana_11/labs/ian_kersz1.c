@@ -7,10 +7,6 @@ out: de 2 até 4 strings (dependendo de quantos valores foram lidos)
 
 #include <stdio.h>
 
-void entrada(void)
-{
-}
-
 int main(void)
 {
     int num = 0;
