@@ -1,15 +1,19 @@
 /* Ian Kersz - Cartão UFRGS: 00338368
 22.04.22
-
+Ler quantos valores o usuarios quiser, até digitar 0, salvar esses valores em um arquivo. Ler o arquivo e imprimir a media e o valor maixmo.
 in: N valores
-out: até 4 strings ()
+out: de 2 até 4 strings (dependendo de quantos valores foram lidos)
 */
 
 #include <stdio.h>
 
+void entrada(void)
+{
+}
+
 int main(void)
 {
-    int num = -1;
+    int num = 0;
     FILE *fNum[2];
     fNum[0] = fopen("pares.bin", "wb");
     fNum[1] = fopen("impares.bin", "wb");
