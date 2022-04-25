@@ -58,11 +58,11 @@ void lerAlunos(char arquivo[], int media)
             {
                 printf("\nNome: %s", aluno.Nome);
                 printf(" Nota: %d", aluno.Nota);
-                idadeMedia += aluno.Idade;
-                count++;
             }
+            idadeMedia += aluno.Idade;
+            count++;
         }
-        printf("\nMedia das idades: %.2f\n", idadeMedia / count);
+        printf("\nMedia media de todos alunos: %.2f\n", idadeMedia / count);
     }
     else
         printf("\nErro ao abrir o arquivo!\n");
