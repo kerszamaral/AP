@@ -1,79 +1,78 @@
 /* Ian Kersz - Cartão UFRGS: 00338368
-00.03.22
-
-in: 2 valores
-out: 1 valor 
+28.04.22
+Le um arquivo de text com times, e salva em um array de structs. Depois, pega esse array e extrapola a pontuacao e aproveitamento,
+a partir do conteudo. Salve em um arquivo de texto o nome, os pontos e o aproveitamento.
+in: 1 arquivo com times e vitorias, empates, derrotas e publico
+out: 1 arquivo com times, pontos e aproveitamento
 */
 
 #include <stdio.h>
-#include <math.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <time.h>
-#include <limits.h>
+
+#define MAX_CLUBES 10
+
+typedef struct CLUBE
+{
+    char nome[30];
+    int vit;
+    int emp;
+    int der;
+    int pontos;
+    float publico;
+} CLUBE;
+
+int lerClubes(CLUBE clube[], FILE **f)
+{
+    int count = 0; //contador de clubes
+
+    while (1)
+    {
+        fscanf(*f, "%s %d %d %d %f", clube[count].nome, &clube[count].vit, &clube[count].emp, &clube[count].der, &clube[count].publico); //leitura dos dados
+        
+        clube[count].pontos = clube[count].vit * 3 + clube[count].emp; //calculo dos pontos
+        count++; //incrementa o contador de clubes
+
+        if (feof(*f)) //verifica se chegou ao fim do arquivo
+            break;
+    }
+
+    return count; //retorna o numero de clubes
+}
+
+void escreverPontuacao(CLUBE clube[], int n, FILE **f)
+{
+    fprintf(*f, "Numero de clubes: %d\n", n); //escreve o numero de clubes
+
+    for (int i = 0; i < n; i++) 
+    {
+        int totalPontosPoss = clube[i].vit * 3 + clube[i].emp*3 + clube[i].der*3; //calcula o total de pontos possiveis
+        double porcentagem = (double)clube[i].pontos / (double)totalPontosPoss * 100; //calcula a porcentagem de pontos
+        fprintf(*f, "%s, %d pontos, aproveitamento de %.2f%c\n", clube[i].nome, clube[i].pontos, porcentagem, 37); //escreve o nome, pontos e aproveitamento
+    }
+}
 
 int main(void)
 {
-    char nome[12];
-    int a, b, c;
-    double d;
+    FILE *f; //ponteiro para o arquivo
+    CLUBE clube[MAX_CLUBES]; //array de structs
 
-    FILE *f;
-
-    f = fopen("ian_kersz.txt", "w");
-
+    f = fopen("brasileiro.txt", "r"); //abre o arquivo
     if (f == NULL)
     {
-        printf("\nErro ao abrir o arquivo!\n");
+        printf("\nErro ao abrir o arquivo!\n"); //verifica se o arquivo foi aberto
         return 1;
     }
 
-    while (1)
-    {
-        printf("\nDigite um nome: ");
-        scanf("%s", nome);
-        if (strcmp(nome, "sair"))
-        {
-            printf("Digite um numero: ");
-            scanf("%d", &a);
-            printf("Digite outro numero: ");
-            scanf("%d", &b);
-            printf("Digite mais um numero: ");
-            scanf("%d", &c);
-            printf("Digite um numero decimal: ");
-            scanf("%lf", &d);
-            fprintf(f, "%s\t%d\t%d\t%d\t%.2lf\n", nome, a, b, c, d);
-        }
-        else
-            break;
-    }
+    int n = lerClubes(clube, &f); //le os clubes e retorna o numero de clubes
 
-    freopen("brasileiro.txt", "r", f);
-
+    freopen("pontuacao.txt", "w", f); //abre o arquivo de saida
     if (f == NULL)
     {
-        printf("\nErro ao abrir o arquivo!\n");
+        printf("\nErro ao abrir o arquivo!\n"); //verifica se o arquivo foi aberto
         return 1;
     }
 
-    while (1)
-    {
-        fscanf(f, "%s %d %d %d %lf", nome, &a, &b, &c, &d);
-        if (feof(f))
-            break;
-        printf("%s\t%d\t%d\t%d\t%.2lf\n", nome, a, b, c, d);
-    }
+    escreverPontuacao(clube, n, &f); //escreve a pontuacao
 
-    fclose(f);
-
+    fclose(f); //fecha o arquivo
     return 0;
 }
-/* for easy testing
-Cruzeiro 23 6 6 31020.53
-Gremio 17 9 9 28123.12
-Goias 16 11 8 15321.87
-Atletico-PR 16 10 9 17231.72
-Botafogo 16 9 10 21421.12
-Vitoria 15 9 11 26312.34
-*/
